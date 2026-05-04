@@ -20,7 +20,7 @@ public class Venta {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "venta_id", nullable = true)
+    @Column(name = "venta_id", nullable = false)
     private long ventaId;
     
     @OneToMany(mappedBy = "venta")
