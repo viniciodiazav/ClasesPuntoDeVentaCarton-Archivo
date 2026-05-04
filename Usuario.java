@@ -8,9 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -21,13 +19,13 @@ public class Usuario {
     private int usuarioId;
     
     @Column(name = "nombre", nullable = false, length = 30)
-    private String nombre;
+    final private String nombre;
     
     @Column(name = "apellido", nullable = false, length = 30)
-    private String apellido;
+    final private String apellido;
     
     @Column(name = "usuario", nullable = false, unique = true, length = 30)
-    private String usuario;
+    final private String usuario;
     
     @Column(name = "password", nullable = false, length = 100)
     private String password;
@@ -35,5 +33,45 @@ public class Usuario {
     @Column(name = "rol", nullable = false)
     @Enumerated(EnumType.STRING)
     private Rol rol;
+
+    public Usuario(String nombre, String apellido, String usuario, String password, Rol rol) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.usuario = usuario;
+        this.password = password;
+        this.rol = rol;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+    
+    public int getUsuarioId() {
+        return usuarioId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
     
 }
