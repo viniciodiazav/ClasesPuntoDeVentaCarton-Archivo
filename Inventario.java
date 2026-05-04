@@ -26,7 +26,6 @@ public class Inventario {
     private LocalDateTime fecha;
     
     @OneToMany(mappedBy = "inventario")
-    @Column(name = "transacciones", nullable = false)
     private List<Transaccion> transacciones;
  
     @Column(name = "pacas_estimadas", nullable = false)
