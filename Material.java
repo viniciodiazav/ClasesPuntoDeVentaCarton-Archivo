@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "materiales")
@@ -20,22 +21,22 @@ public class Material {
     final private String tipo;
     
     @Column(name = "precio_de_compra", nullable = false)
-    private float precioCompra;
+    private BigDecimal precioCompra;
     
     @Column(name = "precio_de_venta", nullable = false)
-    private float precioVenta;
+    private BigDecimal precioVenta;
 
-    public Material(String tipo, float precioCompra, float precioVenta) {
+    public Material(String tipo, BigDecimal precioCompra, BigDecimal precioVenta) {
         this.tipo = tipo;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
     }
     
-    public void setPrecioCompra(float precioCompra) {
+    public void setPrecioCompra(BigDecimal precioCompra) {
         this.precioCompra = precioCompra;
     }
 
-    public void setPrecioVenta(float precioVenta) {
+    public void setPrecioVenta(BigDecimal precioVenta) {
         this.precioVenta = precioVenta;
     }
     
@@ -47,11 +48,11 @@ public class Material {
         return tipo;
     }
 
-    public float getPrecioCompra() {
+    public BigDecimal getPrecioCompra() {
         return precioCompra;
     }
 
-    public float getPrecioVenta() {
+    public BigDecimal getPrecioVenta() {
         return precioVenta;
     }
     
