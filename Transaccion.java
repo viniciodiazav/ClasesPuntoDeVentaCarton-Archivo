@@ -12,7 +12,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "transacciones")
 public class Transaccion {
@@ -39,34 +41,11 @@ public class Transaccion {
     @Column(name = "monto_total", nullable = false)
     private BigDecimal montoTotal;
 
-    public Transaccion() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_inventario")
+    private Inventario inventario;
     
-    public Transaccion(TipoPago tipoPago, BigDecimal montoEstimado, BigDecimal descuento, BigDecimal montoTotal) {
-        this.tipoPago = tipoPago;
-        this.montoEstimado = montoEstimado;
-        this.descuento = descuento;
-        this.montoTotal = montoTotal;
-    }
-
-    public long getTransaccionId() {
-        return transaccionId;
-    }
-
-    public TipoPago getTipoPago() {
-        return tipoPago;
-    }
-
-    public BigDecimal getMontoEstimado() {
-        return montoEstimado;
-    }
-
-    public BigDecimal getDescuento() {
-        return descuento;
-    }
-
-    public BigDecimal getMontoTotal() {
-        return montoTotal;
+    public Transaccion() {
     }
     
 }

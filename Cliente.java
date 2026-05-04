@@ -10,17 +10,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "proveedores")
-public class Proveedor {
-
+@Table(name = "clientes")
+public class Cliente {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "proveedor_id", nullable = false)
-    private int proveedorId;
-
-    @Column(name = "nombre", nullable = false, length = 100)
+    @Column(name = "cliente_id", nullable = false)
+    private int clienteId;
+    
+    @Column(name = "direccion", nullable = false)
+    private String direccion;
+    
+    @Column(name = "nombre", nullable = false)
     private String nombre;
-
-    public Proveedor() {
-    }
+    
 }

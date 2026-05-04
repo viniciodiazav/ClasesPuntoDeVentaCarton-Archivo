@@ -10,7 +10,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "compras_mayoreo")
 public class CompraMayoreo {
@@ -55,51 +57,5 @@ public class CompraMayoreo {
     
     public CompraMayoreo() {
     }
-
-    public long getCompraId() {
-        return compraId;
-    }
-
-    public LocalDateTime getEntrada() {
-        return entrada;
-    }
-
-    public LocalDateTime getSalida() {
-        return salida;
-    }
-
-    public double getPesoBruto() {
-        return pesoBruto;
-    }
-
-    public double getTara() {
-        return tara;
-    }
-
-    public double getPesoNeto() {
-        return pesoNeto;
-    }
-
-    public String getNombreConductor() {
-        return nombreConductor;
-    }
-
-    public String getPlacasCamion() {
-        return placasCamion;
-    }
-
-    public Transaccion getTransaccion() {
-        return transaccion;
-    }
-
-    public Proveedor getProveedor() {
-        return proveedor;
-    }
-
-    public Usuario getOperador() {
-        return operador;
-    }
- 
-    
     
 }

@@ -7,7 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "materiales")
 public class Material {
@@ -27,36 +29,6 @@ public class Material {
     private BigDecimal precioVenta;
 
     public Material() {
-    }
-    
-    public Material(String tipo, BigDecimal precioCompra, BigDecimal precioVenta) {
-        this.tipo = tipo;
-        this.precioCompra = precioCompra;
-        this.precioVenta = precioVenta;
-    }
-    
-    public void setPrecioCompra(BigDecimal precioCompra) {
-        this.precioCompra = precioCompra;
-    }
-
-    public void setPrecioVenta(BigDecimal precioVenta) {
-        this.precioVenta = precioVenta;
-    }
-    
-    public short getMaterialId() {
-        return materialId;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public BigDecimal getPrecioCompra() {
-        return precioCompra;
-    }
-
-    public BigDecimal getPrecioVenta() {
-        return precioVenta;
     }
     
 }

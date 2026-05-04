@@ -8,7 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -36,45 +38,4 @@ public class Usuario {
 
     public Usuario() {
     }
-    
-    public Usuario(String nombre, String apellido, String usuario, String password, Rol rol) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.usuario = usuario;
-        this.password = password;
-        this.rol = rol;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
-    
-    public int getUsuarioId() {
-        return usuarioId;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Rol getRol() {
-        return rol;
-    }
-    
 }

@@ -9,7 +9,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "compras_minudeo")
 public class CompraMinudeo {
@@ -28,18 +30,6 @@ public class CompraMinudeo {
     private Usuario operador;
 
     public CompraMinudeo() {
-    }
-
-    public long getCompraId() {
-        return compraId;
-    }
-
-    public Transaccion getTransaccion() {
-        return transaccion;
-    }
-
-    public Usuario getOperador() {
-        return operador;
     }
     
 }
