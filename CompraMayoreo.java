@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
@@ -26,16 +27,79 @@ public class CompraMayoreo {
     private LocalDateTime salida;
     
     @Column(name = "peso_bruto_kgms", nullable = false)
-    private long pesoBruto;
+    private double pesoBruto;
     
     @Column(name = "tara_kgms", nullable = false)
-    private long tara;
+    private double tara;
     
     @Column(name = "peso_neto_kgms", nullable = false)
-    private long pesoNeto;
+    private double pesoNeto;
     
     @ManyToOne
     @JoinColumn(name = "id_material")
     private Material material;
+    
+    @Column(name = "nombre_conductor", nullable = false)
+    private String nombreConductor;
+    
+    @Column(name = "placas_camion", nullable = false)
+    private String placasCamion;
+
+    @OneToOne
+    @JoinColumn(name = "id_transaccion")
+    private Transaccion transaccion;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_proveedor")
+    private Proveedor proveedor;
+
+    public CompraMayoreo() {
+    }
+    
+    public long getCompraId() {
+        return compraId;
+    }
+
+    public LocalDateTime getEntrada() {
+        return entrada;
+    }
+
+    public LocalDateTime getSalida() {
+        return salida;
+    }
+
+    public double getPesoBruto() {
+        return pesoBruto;
+    }
+
+    public double getTara() {
+        return tara;
+    }
+
+    public double getPesoNeto() {
+        return pesoNeto;
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public String getNombreConductor() {
+        return nombreConductor;
+    }
+
+    public String getPlacasCamion() {
+        return placasCamion;
+    }
+
+    public Transaccion getTransaccion() {
+        return transaccion;
+    }
+
+    public Proveedor getProveedor() {
+        return proveedor;
+    }
+    
+    
     
 }

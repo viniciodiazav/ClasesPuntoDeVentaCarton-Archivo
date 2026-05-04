@@ -19,13 +19,13 @@ public class Usuario {
     private int usuarioId;
     
     @Column(name = "nombre", nullable = false, length = 30)
-    final private String nombre;
+    private String nombre;
     
     @Column(name = "apellido", nullable = false, length = 30)
-    final private String apellido;
+    private String apellido;
     
     @Column(name = "usuario", nullable = false, unique = true, length = 30)
-    final private String usuario;
+    private String usuario;
     
     @Column(name = "password", nullable = false, length = 100)
     private String password;
@@ -34,6 +34,9 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
+    public Usuario() {
+    }
+    
     public Usuario(String nombre, String apellido, String usuario, String password, Rol rol) {
         this.nombre = nombre;
         this.apellido = apellido;

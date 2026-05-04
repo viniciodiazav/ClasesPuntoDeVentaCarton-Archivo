@@ -18,7 +18,7 @@ public class Material {
     private short materialId;
     
     @Column(name = "tipo_material", nullable = false, unique = true, length = 50)
-    final private String tipo;
+    private String tipo;
     
     @Column(name = "precio_de_compra", nullable = false)
     private BigDecimal precioCompra;
@@ -26,6 +26,9 @@ public class Material {
     @Column(name = "precio_de_venta", nullable = false)
     private BigDecimal precioVenta;
 
+    public Material() {
+    }
+    
     public Material(String tipo, BigDecimal precioCompra, BigDecimal precioVenta) {
         this.tipo = tipo;
         this.precioCompra = precioCompra;
