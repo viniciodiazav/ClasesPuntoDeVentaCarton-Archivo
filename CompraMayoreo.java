@@ -37,10 +37,10 @@ public class CompraMayoreo {
     @Column(name = "peso_neto_kgms", nullable = false)
     private double pesoNeto;
     
-    @Column(name = "nombre_conductor", nullable = false)
+    @Column(name = "nombre_conductor", nullable = false, length = 30)
     private String nombreConductor;
     
-    @Column(name = "placas_camion", nullable = false)
+    @Column(name = "placas_camion", nullable = false, length = 20)
     private String placasCamion;
 
     @OneToOne
@@ -52,8 +52,8 @@ public class CompraMayoreo {
     private Proveedor proveedor;
 
     @ManyToOne
-    @JoinColumn(name = "id_operador")
-    private Usuario operador;
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
     
     public CompraMayoreo() {
     }

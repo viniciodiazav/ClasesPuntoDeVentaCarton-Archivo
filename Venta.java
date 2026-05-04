@@ -33,10 +33,10 @@ public class Venta {
     @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
     
-    @Column(name = "nombre_conductor", nullable = false)
+    @Column(name = "nombre_conductor", nullable = false, length = 30)
     private String nombreConductor;
     
-    @Column(name = "placas_camion", nullable = false)
+    @Column(name = "placas_camion", nullable = false, length = 20)
     private String placasCamion;
     
     public Venta() {

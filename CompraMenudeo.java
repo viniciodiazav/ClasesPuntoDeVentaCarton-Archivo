@@ -13,8 +13,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "compras_minudeo")
-public class CompraMinudeo {
+@Table(name = "compras_menudeo")
+public class CompraMenudeo {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,10 +26,10 @@ public class CompraMinudeo {
     private Transaccion transaccion;
     
     @ManyToOne
-    @JoinColumn(name = "id_operador", nullable = false)
-    private Usuario operador;
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
 
-    public CompraMinudeo() {
+    public CompraMenudeo() {
     }
     
 }

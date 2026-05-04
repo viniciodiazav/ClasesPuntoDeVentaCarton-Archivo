@@ -24,7 +24,7 @@ public class Paca {
     @Column(name = "fecha_emision", nullable = false)
     private LocalDateTime fechaEmision;
     
-    @Column(name = "codigo_paca", nullable = false)
+    @Column(name = "codigo_paca", nullable = false, length = 200)
     private String codigo;
 
     @ManyToOne

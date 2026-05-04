@@ -45,6 +45,9 @@ public class Transaccion {
     @JoinColumn(name = "id_inventario")
     private Inventario inventario;
     
+    @Column(name = "descripcion_descuento", nullable = true, length = 255)
+    private String descripcionDescuento;
+    
     public Transaccion() {
     }
     
