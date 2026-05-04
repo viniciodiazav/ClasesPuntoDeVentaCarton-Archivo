@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -35,10 +36,6 @@ public class CompraMayoreo {
     @Column(name = "peso_neto_kgms", nullable = false)
     private double pesoNeto;
     
-    @ManyToOne
-    @JoinColumn(name = "id_material")
-    private Material material;
-    
     @Column(name = "nombre_conductor", nullable = false)
     private String nombreConductor;
     
@@ -46,16 +43,20 @@ public class CompraMayoreo {
     private String placasCamion;
 
     @OneToOne
-    @JoinColumn(name = "id_transaccion")
+    @JoinColumn(name = "id_transaccion", nullable = false)
     private Transaccion transaccion;
     
     @ManyToOne
-    @JoinColumn(name = "id_proveedor")
+    @JoinColumn(name = "id_proveedor", nullable = false)
     private Proveedor proveedor;
 
+    @ManyToMany
+    @JoinColumn(name = "id_operador")
+    private Usuario operador;
+    
     public CompraMayoreo() {
     }
-    
+
     public long getCompraId() {
         return compraId;
     }
@@ -80,10 +81,6 @@ public class CompraMayoreo {
         return pesoNeto;
     }
 
-    public Material getMaterial() {
-        return material;
-    }
-
     public String getNombreConductor() {
         return nombreConductor;
     }
@@ -99,7 +96,11 @@ public class CompraMayoreo {
     public Proveedor getProveedor() {
         return proveedor;
     }
-    
+
+    public Usuario getOperador() {
+        return operador;
+    }
+ 
     
     
 }

@@ -8,6 +8,8 @@ import jakarta.persistence.EnumeratedValue;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
@@ -19,6 +21,10 @@ public class Transaccion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaccion_id", nullable = false)
     private long transaccionId;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_material")
+    private Material material;
     
     @Column(name = "tipo_de_pago", nullable = false)
     @Enumerated(EnumType.STRING)
